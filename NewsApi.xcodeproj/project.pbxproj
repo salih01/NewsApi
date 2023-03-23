@@ -14,6 +14,7 @@
 		3A1D9D8629CC4CD00050BAF4 /* NewsApi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A1D9D8429CC4CD00050BAF4 /* NewsApi.xcdatamodeld */; };
 		3A1D9D8829CC4CD10050BAF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1D9D8729CC4CD10050BAF4 /* Assets.xcassets */; };
 		3A1D9D8B29CC4CD10050BAF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A1D9D8929CC4CD10050BAF4 /* LaunchScreen.storyboard */; };
+		3AC2285829CC6A690015BB62 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2285729CC6A690015BB62 /* NewsModel.swift */; };
 		A2D09826E92FE86C4C3F3351 /* Pods_NewsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3796D896E768A23C34D8087A /* Pods_NewsApi.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		3A1D9D8729CC4CD10050BAF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A1D9D8A29CC4CD10050BAF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A1D9D8C29CC4CD10050BAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC2285729CC6A690015BB62 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		6189210253AB031D1D076952 /* Pods-NewsApi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApi.release.xcconfig"; path = "Target Support Files/Pods-NewsApi/Pods-NewsApi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,16 +67,33 @@
 		3A1D9D7A29CC4CD00050BAF4 /* NewsApi */ = {
 			isa = PBXGroup;
 			children = (
+				3AE8349B29CC693000957682 /* Model */,
+				3AE8349C29CC694000957682 /* Base */,
+				3A1D9D8C29CC4CD10050BAF4 /* Info.plist */,
+				3A1D9D8429CC4CD00050BAF4 /* NewsApi.xcdatamodeld */,
+			);
+			path = NewsApi;
+			sourceTree = "<group>";
+		};
+		3AE8349B29CC693000957682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3AC2285729CC6A690015BB62 /* NewsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3AE8349C29CC694000957682 /* Base */ = {
+			isa = PBXGroup;
+			children = (
 				3A1D9D7B29CC4CD00050BAF4 /* AppDelegate.swift */,
 				3A1D9D7D29CC4CD00050BAF4 /* SceneDelegate.swift */,
 				3A1D9D7F29CC4CD00050BAF4 /* ViewController.swift */,
 				3A1D9D8129CC4CD00050BAF4 /* Main.storyboard */,
 				3A1D9D8729CC4CD10050BAF4 /* Assets.xcassets */,
 				3A1D9D8929CC4CD10050BAF4 /* LaunchScreen.storyboard */,
-				3A1D9D8C29CC4CD10050BAF4 /* Info.plist */,
-				3A1D9D8429CC4CD00050BAF4 /* NewsApi.xcdatamodeld */,
 			);
-			path = NewsApi;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		E4B159A33A7ADE9D496CB1F5 /* Pods */ = {
@@ -83,7 +102,6 @@
 				17913D1E1E4B96CC377225B1 /* Pods-NewsApi.debug.xcconfig */,
 				6189210253AB031D1D076952 /* Pods-NewsApi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +232,7 @@
 				3A1D9D7C29CC4CD00050BAF4 /* AppDelegate.swift in Sources */,
 				3A1D9D7E29CC4CD00050BAF4 /* SceneDelegate.swift in Sources */,
 				3A1D9D8629CC4CD00050BAF4 /* NewsApi.xcdatamodeld in Sources */,
+				3AC2285829CC6A690015BB62 /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
