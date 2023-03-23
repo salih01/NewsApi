@@ -14,8 +14,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
     
-        let model = NewsModel()
-        model.getCall()
+        NewsModel.getCall { newsModelArray in
+            
+            for data in newsModelArray {
+                print("TİTLE : \(data.title)")
+                print("IMAGE :\(data.image)")
+                print("BODY :\(data.body)")
+
+            }
+        }
         
         //print(model.title)
     }
