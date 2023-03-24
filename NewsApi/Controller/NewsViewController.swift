@@ -8,6 +8,9 @@
 import UIKit
 
 class NewsViewController: UIViewController ,NewsViewDelegate{
+   
+    @IBOutlet weak var scrollView: UIScrollView!
+
     var newsView: NewsView!
      
      override func viewDidLoad() {
@@ -30,23 +33,24 @@ class NewsViewController: UIViewController ,NewsViewDelegate{
          }
      }
      
-     func didSelectNews(_ news: NewsModel) {
-         guard let parentVC = parent else {
-             return
-         }
-         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-         let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-         if let image = UIImage(named: news.image) {
-             detailVC.imageName = image
-         }
-         detailVC.titleText = news.title
-         detailVC.bodyText = news.body
-         parentVC.present(detailVC, animated: true, completion: nil)
-     }
+    func didSelectNews(_ news: NewsModel) {
+        guard let parentVC = parent else {return}
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        getNewsCall()
 
-    @IBOutlet weak var scrollView: UIScrollView!
+        if let imageURL = URL(string: news.image) {
+            detailVC.imageURL = imageURL
+        } else {
+            print("Error: Failed to create image URL from '\(news.image)'")
+        }
+        
+        detailVC.titleText = news.title
+        detailVC.bodyText = news.body
+        parentVC.present(detailVC, animated: true, completion: nil)
+    }
 
-    
+
    
 
 }

@@ -9,5 +9,6 @@ target 'NewsApi' do
 
  pod 'Alamofire'
  pod 'SwiftyJSON', '~> 4.0'
+ pod 'Kingfisher', '~> 7.0'
 
 end
