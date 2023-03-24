@@ -23,12 +23,20 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    override func prepareForReuse() {
+         super.prepareForReuse()
+         
+         // önceki içeriği sıfırla
+         newsImage.image = nil
+     }
     
     func generateCell(newsModel:NewsModel){
         
         newsTitle.text  = newsModel.title
         newsBody.text   = newsModel.body
-        newsImage.image = getImage(newsModel.image)
+        getImage(from: newsModel.image) { [weak self] image in
+            self?.newsImage.image = image
+        }
         
     }
     

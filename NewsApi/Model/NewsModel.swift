@@ -35,6 +35,9 @@ class NewsModel {
         return _body
     }
     
+   
+    
+    
     init(newsDictionary: Dictionary<String,AnyObject>) {
         self._title = newsDictionary["title"] as? String ?? ""
         self._body = newsDictionary["body"] as? String ?? ""

@@ -13,6 +13,7 @@ class NewsView: UIView {
     @IBOutlet weak var tableView: UITableView!
     
     var newsModel:NewsModel!
+    var newsDataArray:[NewsModel] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +24,8 @@ class NewsView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    
     
     private func mainInit(){
         Bundle.main.loadNibNamed("NewsView", owner: self)
@@ -36,6 +39,28 @@ class NewsView: UIView {
     
     private func setupTableView(){
         
+        tableView.register(UINib(nibName: "NewsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        
     }
+    
+}
+extension NewsView:UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return min(newsDataArray.count,20)
+    }
+
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! NewsTableViewCell
+        
+        cell.generateCell(newsModel: newsDataArray[indexPath.row])
+        
+        return cell
+    }
+    
     
 }
