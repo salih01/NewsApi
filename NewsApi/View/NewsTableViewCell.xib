@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="NewsApi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6q-Mg-62m">
+                        <rect key="frame" x="20" y="24" width="335" height="103"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GPG-cf-nXs">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="4QN-sw-9G5"/>
+                                    <constraint firstAttribute="height" constant="103" id="Vcv-av-CE4"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="PkW-gi-yM5">
+                                <rect key="frame" x="176" y="0.0" width="159" height="103"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasın" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcE-IR-8Iu">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.66666666666666" height="49"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="11"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qi6-7F-LNX">
+                                        <rect key="frame" x="0.0" y="54" width="158.66666666666666" height="49"/>
+                                        <string key="text">Kılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasın</string>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="f6q-Mg-62m" secondAttribute="trailing" constant="20" symbolic="YES" id="BOG-v7-xJc"/>
+                    <constraint firstItem="f6q-Mg-62m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Dtl-pK-jIx"/>
+                    <constraint firstAttribute="bottom" secondItem="f6q-Mg-62m" secondAttribute="bottom" constant="23" id="Mnh-vQ-tby"/>
+                    <constraint firstItem="f6q-Mg-62m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="Oef-Ib-YD5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="newsBody" destination="Qi6-7F-LNX" id="ydc-cd-ZXl"/>
+                <outlet property="newsImage" destination="GPG-cf-nXs" id="t4V-um-NKi"/>
+                <outlet property="newsTitle" destination="JcE-IR-8Iu" id="KfR-WB-9Vt"/>
+            </connections>
+            <point key="canvasLocation" x="-153.43511450381678" y="-12.67605633802817"/>
+        </tableViewCell>
+    </objects>
+</document>

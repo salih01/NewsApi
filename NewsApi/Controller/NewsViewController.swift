@@ -22,7 +22,6 @@ class NewsViewController: UIViewController {
         scrollView.addSubview(newsView)
         newsView.frame = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
         
-        print(scrollView.bounds)
         
     }
 

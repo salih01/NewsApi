@@ -12,6 +12,8 @@ class NewsView: UIView {
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    var newsModel:NewsModel!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
