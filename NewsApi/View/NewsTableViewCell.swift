@@ -22,18 +22,26 @@ class NewsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+
+
     }
     override func prepareForReuse() {
          super.prepareForReuse()
          
          // önceki içeriği sıfırla
          newsImage.image = nil
+        
      }
     
     func generateCell(newsModel:NewsModel){
         
         newsTitle.text  = newsModel.title
         newsBody.text   = newsModel.body
+       
+        newsImage.addShadowAndRoundedCorners(cornerRadius: 10, shadowColor: .black, shadowOffset: CGSize(width: 0, height: 4), shadowOpacity: 0.7, shadowRadius: 7)
+
+
+        
         getImage(from: newsModel.image) { [weak self] image in
             self?.newsImage.image = image
         }

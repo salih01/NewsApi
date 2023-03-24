@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol NewsViewDelegate: class {
+    func didSelectNews(_ news: NewsModel)
+}
+
+
 class NewsView: UIView {
 
     @IBOutlet var mainView: UIView!
@@ -14,6 +19,9 @@ class NewsView: UIView {
     
     var newsModel:NewsModel!
     var newsDataArray:[NewsModel] = []
+    weak var delegate: NewsViewDelegate?
+    var parentViewController:ViewController!
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +33,7 @@ class NewsView: UIView {
         super.init(coder: coder)
     }
     
-    
+  
     
     private func mainInit(){
         Bundle.main.loadNibNamed("NewsView", owner: self)
@@ -34,6 +42,8 @@ class NewsView: UIView {
         mainView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         
         setupTableView()
+        
+        
 
     }
     
@@ -51,7 +61,7 @@ extension NewsView:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return min(newsDataArray.count,20)
     }
-
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -61,6 +71,8 @@ extension NewsView:UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           print(delegate?.didSelectNews(newsDataArray[indexPath.row]))
+       }
+ 
 }
