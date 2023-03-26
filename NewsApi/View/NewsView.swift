@@ -33,8 +33,6 @@ class NewsView: UIView {
         super.init(coder: coder)
     }
     
-  
-    
     private func mainInit(){
         Bundle.main.loadNibNamed("NewsView", owner: self)
         addSubview(mainView)
@@ -42,8 +40,6 @@ class NewsView: UIView {
         mainView.autoresizingMask = [.flexibleHeight,.flexibleWidth]
         
         setupTableView()
-        
-        
 
     }
     

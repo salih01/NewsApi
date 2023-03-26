@@ -22,4 +22,14 @@ extension UIImageView {
    
 
 }
+extension Data {
+    init?(url: URL) {
+        do {
+            self = try Data(contentsOf: url)
+        } catch {
+            print("Error converting URL to Data: \(error)")
+            return nil
+        }
+    }
+}
 

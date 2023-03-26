@@ -71,7 +71,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfQ-Jk-dhC">
-                                                <rect key="frame" x="255.33333333333326" y="0.0" width="87.666666666666629" height="80"/>
+                                                <rect key="frame" x="255.33333333333329" y="0.0" width="87.666666666666657" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="i6L-Yz-Egb"/>
                                                 </constraints>
@@ -157,18 +157,90 @@
         <!--Favorite-->
         <scene sceneID="icd-Ab-H2z">
             <objects>
-                <viewController id="e0N-gs-3Dl" sceneMemberID="viewController">
+                <viewController id="e0N-gs-3Dl" customClass="FavoriteNewsViewController" customModule="NewsApi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AIU-Q1-Zlj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xt7-4R-CK7">
+                                <rect key="frame" x="0.0" y="91" width="375" height="638"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="nEc-7y-M6g" userLabel="cell" customClass="FavoriteNewsTableViewCell" customModule="NewsApi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nEc-7y-M6g" id="lem-uz-jno">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iST-lX-ecL">
+                                                    <rect key="frame" x="20" y="20" width="335" height="110"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fiy-hD-lvR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="159" height="110"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="110" id="LCU-VS-CCH"/>
+                                                                <constraint firstAttribute="width" constant="159" id="i4w-c7-Unn"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LDc-IL-HMv">
+                                                            <rect key="frame" x="175" y="0.0" width="160" height="110"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Kılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasın" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6mj-9X-Sd5">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="51.333333333333336"/>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-ol-nkX">
+                                                                    <rect key="frame" x="0.0" y="51.333333333333329" width="160" height="58.666666666666671"/>
+                                                                    <string key="text">Kılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasınKılıçdaroğlu aday olmasın</string>
+                                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="9"/>
+                                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="110" id="436-kM-zag"/>
+                                                                <constraint firstAttribute="width" constant="160" id="HKN-q9-odF"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iST-lX-ecL" firstAttribute="trailing" secondItem="lem-uz-jno" secondAttribute="trailingMargin" id="13L-g6-WOS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iST-lX-ecL" secondAttribute="bottom" constant="9" id="Q5k-b4-ZbJ"/>
+                                                <constraint firstItem="iST-lX-ecL" firstAttribute="leading" secondItem="lem-uz-jno" secondAttribute="leadingMargin" id="QKw-de-asv"/>
+                                                <constraint firstItem="iST-lX-ecL" firstAttribute="top" secondItem="lem-uz-jno" secondAttribute="topMargin" constant="9" id="lsg-82-qmL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="body" destination="aKN-ol-nkX" id="oE4-Jr-IvH"/>
+                                            <outlet property="imageCell" destination="fiy-hD-lvR" id="q8a-dJ-mKt"/>
+                                            <outlet property="title" destination="6mj-9X-Sd5" id="VVy-8q-fyZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yMB-rR-Yyq"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yMB-rR-Yyq" firstAttribute="bottom" secondItem="Xt7-4R-CK7" secondAttribute="bottom" id="4j7-P8-j2x"/>
+                            <constraint firstItem="Xt7-4R-CK7" firstAttribute="top" secondItem="yMB-rR-Yyq" secondAttribute="top" id="XVp-tE-hhd"/>
+                            <constraint firstItem="yMB-rR-Yyq" firstAttribute="trailing" secondItem="Xt7-4R-CK7" secondAttribute="trailing" id="fYg-yK-bLg"/>
+                            <constraint firstItem="Xt7-4R-CK7" firstAttribute="leading" secondItem="yMB-rR-Yyq" secondAttribute="leading" id="hOC-jT-9ib"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="cMg-6l-fZh"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xt7-4R-CK7" id="wrx-pr-Zb7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q0r-ZP-qjK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1982.4427480916029" y="822.53521126760563"/>
+            <point key="canvasLocation" x="1981.5999999999999" y="822.41379310344826"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="92U-hU-hoe">

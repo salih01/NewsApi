@@ -35,6 +35,17 @@ class DetailViewController: UIViewController {
     
     
     @IBAction func favoriteButton(_ sender: Any) {
+        guard let title = titleText, let body = bodyText, let imageURL = imageURL else {
+              return
+         }
+         
+        let imageData = Data(url: imageURL)
+         FavoriteNewsManager.shared.addFavoriteNews(title: title, body: body, imageURL: imageData!)
+         
+         let alertController = UIAlertController(title: "Favorilere Eklendi", message: "Haber favorilere eklendi.", preferredStyle: .alert)
+         let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+         alertController.addAction(okAction)
+         present(alertController, animated: true, completion: nil)
         
     }
     

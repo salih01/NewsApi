@@ -52,8 +52,8 @@ extension CIImageProcessor {
     /// - Note: See documentation of `ImageProcessor` protocol for more.
     public func process(item: ImageProcessItem, options: KingfisherParsedOptionsInfo) -> KFCrossPlatformImage? {
         switch item {
-        case .image(let image):
-            return image.kf.apply(filter)
+        case .image(let imageNews):
+            return imageNews.kf.apply(filter)
         case .data:
             return (DefaultImageProcessor.default |> self).process(item: item, options: options)
         }

@@ -185,7 +185,7 @@ extension KingfisherWrapper where Base: CPListItem {
                             completionHandler?(result)
                             
                         case .failure:
-                            if let image = options.onFailureImage {
+                            if let imageNews = options.onFailureImage {
                                 /**
                                  * In iOS SDK 14.0-14.4 the image param was non-`nil`. The SDK changed in 14.5
                                  * to allow `nil`. The compiler version 5.4 was introduced in this same SDK,
@@ -194,9 +194,9 @@ extension KingfisherWrapper where Base: CPListItem {
                                  * users to compile the framework.
                                  */
                                 #if compiler(>=5.4)
-                                self.base.setImage(image)
+                                self.base.setImage(imageNews)
                                 #else // Let older SDK users deal with the older behavior.
-                                if let unwrapped = image {
+                                if let unwrapped = imageNews {
                                     self.base.setImage(unwrapped)
                                 }
                                 #endif   
